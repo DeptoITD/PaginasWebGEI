@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  
+
 </head>
 
 <body>
@@ -43,8 +43,9 @@
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalContacto">CONTACTO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-nowrap" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">PORTAL COLABORADORES</a>
-              </li>
+          <a class="nav-link text-nowrap" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">PORTAL
+            COLABORADORES</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -114,7 +115,6 @@
           </a>
         </div>
       </div>
-
     </div>
 
 
@@ -167,14 +167,17 @@
               <textarea class="form-control" id="mensaje" required></textarea>
             </div>
             <div class="form-group mt-4 px-2">
-              <p class="text-wrap">Al hacer clic en “Enviar mensaje”, aceptas el manejo de tus datos personales de acuerdo con
-                 la Ley 1581 de 2012 de Colombia. 
-                 Los datos serán tratados por INDESCO SAS BIC con el fin de Contactarse contigo. <br>
-                  <br>Si tienes alguna pregunta o inquietud, no dudes en ponerte en contacto con nosotros a través de los números
-                   de contacto presentes en este formulario.</p>
+              <p class="text-wrap">Al hacer clic en “Enviar mensaje”, aceptas el manejo de tus datos personales de
+                acuerdo con
+                la Ley 1581 de 2012 de Colombia.
+                Los datos serán tratados por INDESCO SAS BIC con el fin de Contactarse contigo. <br>
+                <br>Si tienes alguna pregunta o inquietud, no dudes en ponerte en contacto con nosotros a través de los
+                números
+                de contacto presentes en este formulario.
+              </p>
             </div>
           </form>
-          
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -183,7 +186,7 @@
       </div>
     </div>
   </div>
- 
+
   <!--  login colaboradores -->
   <div class="modal fade" id="loginModal">
     <div class="modal-dialog">
@@ -215,7 +218,7 @@
     </div>
   </div>
 
-  
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
   </script>
 
@@ -227,6 +230,71 @@
   <script src="controles/form.js"></script>
 
   <script src="controles/usuarios.js"></script>
+
+  <script src="controles/cookies.js"></script>
+
+  <!-- Modal de Política de Privacidad -->
+  <div class="modal fade" id="modalPolitica" tabindex="-1" aria-labelledby="politicaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="politicaLabel">Política de Privacidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <strong>Política de privacidad</strong><br>
+            La política de privacidad es una declaración que divulga una parte o la totalidad de las prácticas de
+            recopilación,
+            uso, divulgación y gestión de datos de los usuarios y clientes de un sitio web. Cumple con el requisito
+            legal
+            de proteger la privacidad de un usuario o cliente.
+          </p>
+          <p>
+            Cada país se rige por sus propias leyes, con diferentes requisitos en cada jurisdicción respecto al uso de
+            políticas
+            de privacidad. Asegúrate de cumplir con la legislación aplicable a tus actividades y ubicación.
+          </p>
+          <p>En general, ¿qué debe incluir una política de privacidad?</p>
+          <ol>
+            <li>¿Qué tipo de información recopilas?</li>
+            <li>¿Cómo recopilas la información?</li>
+            <li>¿Por qué recopilas esa información personal?</li>
+            <li>¿Cómo almacenas, utilizas, compartes y divulgas la información personal de los visitantes de tu sitio
+              web?</li>
+            <li>¿Qué comunicación tienes con los visitantes de tu sitio web (en caso de tenerla)?</li>
+            <li>¿Tu servicio se dirige a menores y recopila información sobre ellos?</li>
+            <li>Actualizaciones de la política de privacidad</li>
+            <li>Información de contacto</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="controles/politica.js"></script>
+
 </body>
+
+ <!-- Cookie Consent Popup -->
+<div id="cookie-popup" style="position: fixed; bottom: 20px; left: 20px; right: 20px; background: #f8f9fa; border: 1px solid #ccc; padding: 20px; z-index: 9999; display: none;">
+  <p>Este sitio web utiliza cookies para mejorar tu experiencia y analizar el tráfico. Al continuar navegando, aceptas nuestra Política de Cookies. Puedes leer más sobre cómo usamos tus datos personales en nuestra <a href="#politica-privacidad">política de privacidad</a>.</p>
+  <button onclick="aceptarCookies()">Aceptar</button>
+</div>
+
+<script>
+  function aceptarCookies() {
+    localStorage.setItem('cookiesAceptadas', 'true');
+    document.getElementById('cookie-popup').style.display = 'none';
+  }
+
+  window.onload = function() {
+    if (!localStorage.getItem('cookiesAceptadas')) {
+      document.getElementById('cookie-popup').style.display = 'block';
+    }
+  }
+</script>
 
 </html>
