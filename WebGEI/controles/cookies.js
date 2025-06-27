@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Este sitio web utiliza cookies para mejorar tu experiencia y analizar el tráfico.
         Al continuar navegando, aceptas nuestra Política de Cookies.
         Puedes leer más sobre cómo usamos tus datos personales en nuestra
-        <a href="#politica-privacidad" style="color: #6b3088; text-decoration: underline;">política de privacidad</a>.
+        <a href="#" id="ver-politica" style="color: #6b3088; text-decoration: underline;">política de privacidad</a>
       </p>
       <button id="aceptar-cookies" style="background-color: #7b0010; color: white; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">
         Aceptar
