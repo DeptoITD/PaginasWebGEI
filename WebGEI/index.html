@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRUPO INDESCO</title>
+  <link rel="icon" href="Imgs/mifavicon.png">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+</head>
+
+<body>
+
+
+  <!-- Menú -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <div class="container px-4 logobrand">
+      <a class="navbar-brand d-lg-block" href="#">
+        <img src="./Imgs/Logo_grupo_blanco.svg" alt="Grupo Indesco" height="80" />
+      </a>
+
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse collapse flex-column flex-fill px-5 colapso" id="navbarSupportedContent">
+      <ul class="navbar-nav flex-nowrap">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">NOSOTROS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#EmpresasGrupo">EMPRESAS</a>
+        </li>
+        <li class="nav-item">
+          <!-- Cambiado de data-bs-toggle y data-bs-target a href con el ID del modal -->
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalContacto">CONTACTO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-nowrap" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">PORTAL COLABORADORES</a>
+              </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!--  Contenido -->
+
+  <main class="container-fluid overflow-hidden align-items-cente" id="fondo">
+
+    <!--  Línea 1-->
+
+    <div class="row align-items-center mx-auto py-4 nosotros">
+
+      <div class="col-md-8">
+        <p>Indesco es un grupo de empresas de consultoría, que reúne más de <b>12 años </b> de
+          experiencia en el sector de la infraestructura y donde trabajamos a diario con el propósito de
+          generar soluciones técnicas integrales para proyectos de ingeniería y formación, que
+          permitan mejorar la calidad de vida de las comunidades donde actuamos, conservar el
+          medio ambiente y aportar valor a través de desarrollos innovadores. </p>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <img src="./Imgs/Gei_01.svg" alt="Grupo Indesco">
+      </div>
+    </div>
+
+
+    <!--  Línea 2-->
+
+    <div class="row align-items-center px-2 py-5 mb-5 mapa">
+
+      <img src="./Imgs/Mapa_proyectos.svg" alt="Proyectos ejecutados" class="img-fluid d-none d-md-block mx-auto"
+        style="max-width: 70%">
+
+      <img src="./Imgs/Mapa_vmovil.svg" alt="Proyectos ejecutados" class="img-fluid d-sm-block d-md-none mx-auto">
+    </div>
+
+    <!--  Línea 3-->
+
+    <div class="container-fluid" id="EmpresasGrupo">
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-10">
+          <h1 class="column-title">NUESTRAS EMPRESAS</h1>
+        </div>
+
+        <div class="col-md-3 mx-3 my-2 column1 column">
+          <a class="mx-auto" href="https://www.indesco.la/" target="_blank">
+            <img class="custom-image" src="./Imgs/Indesco_V.png" alt="Indesco"
+              onmouseover="changeImage(this, './Imgs/Indesco_V_blanco.png')"
+              onmouseout="changeImage(this, './Imgs/Indesco_V.png')">
+          </a>
+        </div>
+
+        <div class="col-md-3 mx-3 my-2 column2 column">
+          <a class="mx-auto" href="https://www.enef.la/" target="_blank">
+            <img class="custom-image " src="Imgs/Enef_v.png" alt="Enef"
+              onmouseover="changeImage(this, './Imgs/Enef_Blanco_v.png')"
+              onmouseout="changeImage(this, './Imgs/Enef_V.png')">
+          </a>
+        </div>
+
+        <div class="col-md-3 mx-3 my-2 column3 column">
+          <a class="mx-auto" href="#">
+            <img class="custom-image" src="./Imgs/Obrasein_V.png" alt="Grupo Indesco"
+              onmouseover="changeImage(this, './Imgs/Obrasein_V_Blanco.png')"
+              onmouseout="changeImage(this, './Imgs/Obrasein_V.png')">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+  </main>
+
+  <div class="flex-container my-3 p-3 text-center">
+    © 2023 hecho por INDESCO S.A.S. BIC Todos los derechos reservados
+  </div>
+
+  <!--  Formulario -->
+
+  <div class="modal fade" id="modalContacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Contacto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="contactForm" method="post">
+            <div class="container-fluid">
+              <h5 class="text-center"> Visítanos:</h5>
+              <p class="text-center">
+                Av. Calle 26 No 85D - 55 Oficina A122 y A123 <br>
+                Centro empresarial Dorado Plaza <br>
+                ​Bogotá D.C - Colombia
+              </p>
+              <h5 class="text-center"> Llámanos o escríbenos:</h5>
+              <p>
+                PBX: +57 (601) 530 78 03 <br>
+                Whatsapp: +57 322 829 13 64 <br>
+                Correo: comercial@indesco.com.co
+              </p>
+            </div>
+            <div class="form-group mt-2">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group mt-2">
+              <label for="telefono">Teléfono</label>
+              <input type="text" class="form-control" id="telefono" required>
+            </div>
+            <div class="form-group mt-2">
+              <label for="email">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group mensaje-grande mt-2 ">
+              <label for="mensaje">Mensaje</label>
+              <textarea class="form-control" id="mensaje" required></textarea>
+            </div>
+            <div class="form-group mt-4 px-2">
+              <p class="text-wrap">Al hacer clic en “Enviar mensaje”, aceptas el manejo de tus datos personales de acuerdo con
+                 la Ley 1581 de 2012 de Colombia. 
+                 Los datos serán tratados por INDESCO SAS BIC con el fin de Contactarse contigo. <br>
+                  <br>Si tienes alguna pregunta o inquietud, no dudes en ponerte en contacto con nosotros a través de los números
+                   de contacto presentes en este formulario.</p>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="enviarMensaje">Enviar Mensaje</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!--  login colaboradores -->
+  <div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Iniciar sesión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" action="/login" method="post">
+            <div class="mb-3">
+              <label for="username">Usuario</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password">Contraseña</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+              <button type="button" class="btn btn-danger cerrar" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            <div id="errorMessage" class="alert alert-danger" style="display: none;">
+              Usuario y/o contraseña erróneos. Favor comuniquese con el administrador del sitio.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+
+
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="controles/cambio.js"></script>
+  <script src="controles/Colapso.js"></script>
+  <script src="controles/correo.js"></script>
+  <script src="controles/form.js"></script>
+
+  <script src="controles/usuarios.js"></script>
+</body>
+
+</html>

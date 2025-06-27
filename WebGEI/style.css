@@ -1,0 +1,189 @@
+body {
+    background-image: url(./Imgs/Fondo_GEI2.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    font-family: 'Century Gothic', Arial, sans-serif;
+}
+
+
+/* menú */
+nav {
+    background-color: #3B0E1D;
+}
+
+.navbar-brand img {
+    margin-left: 100px;
+    width: 80px;
+}
+
+.navbar-toggler span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenido */
+#fondo {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+
+/* linea 1 */
+
+.nosotros p {
+    text-align: justify;
+    padding: 0 50px;
+}
+
+.nosotros img {
+    padding: 0 50PX;
+    height: 240px;
+}
+
+
+/* linea 2 */
+
+.mapa {
+    background-image: url(./Imgs/Fondo_mapa.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* linea 3 */
+
+
+.column-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.column {
+    border-radius: 12px;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+
+.column1 {
+    background-image: url(./Imgs/Fondo_Indesco.png);
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s;
+}
+
+.column1:hover {
+    background-color: #7b0010;
+    background-image: url(./Imgs/Fondo_GEI.png);
+}
+
+
+.column2 {
+    background-image: url(./Imgs/Fondo_enef.png);
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s;
+}
+
+.column2:hover {
+    background-color: #6b3088;
+    background-image: url(./Imgs/Fondo_GEI.png);
+}
+
+.column3 {
+    background-image: url(./Imgs/Fondo_Obrasein.png);
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s;
+}
+
+.column3:hover {
+    background-color: #40735b;
+    background-image: url(./Imgs/Fondo_GEI.png);
+}
+
+
+/* Formularios3 */
+
+.modal-dialog {
+     margin: 120px auto;
+  }
+  
+  .modal-header {
+    background-color: #3B0E1D;
+    color: #fff;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-footer {
+    text-align: right;
+  }
+
+  .btn-close {
+    background-color: white;
+    border: none;
+    color: black;
+  }
+  
+
+@media (max-width: 780px) {
+
+
+    .logobrand {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .navbar-brand img {
+        margin-left: 0;
+
+    }
+
+    .colapso {
+        background-color: #470808;
+    }
+
+    .nosotros p {
+        padding: 0
+    }
+
+    .nosotros img {
+        margin-top: 10px;
+        padding: 0 60PX;
+        height: 200px;
+    }
+
+
+    .column {
+        border-radius: 10px;
+        height: 150px;
+        box-shadow: #3B0E1D;
+    }
+
+    .custom-image {
+        height: 100px;
+    }
+
+    .modal-dialog {
+        max-width: 320px;
+        margin: 120px auto;
+     }
+
+}
