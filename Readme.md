@@ -1,6 +1,6 @@
 # 🌐 PaginasWebGEI
 
-Repositorio que centraliza las páginas web del Grupo Empresarial INDESCO, incluyendo sitios estáticos como WebGEI y WebIndesco. 
+Repositorio que centraliza las páginas web del Grupo Empresarial INDESCO, incluyendo sitios estáticos como WebGEI y WebIndesco. Se utiliza GitHub Pages para despliegue y control de versiones.
 
 ## 📁 Estructura del Repositorio
 
