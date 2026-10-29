@@ -1,41 +1,48 @@
+/**
+ * cookies.js - Banner de cookies
+ * Grupo Empresarial INDESCO
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Verifica que el popup aún no existe y que no se ha aceptado antes
-  const yaExiste = document.getElementById("cookie-popup");
-  const yaAceptado = localStorage.getItem("cookiesAceptadas");
+  const yaExiste = document.getElementById("cookie-banner-ref");
+  const preferenciaGuardada = localStorage.getItem("cookiesAceptadas");
 
-  if (!yaAceptado && !yaExiste) {
-    const popup = document.createElement("div");
-    popup.id = "cookie-popup";
-    popup.style.position = "fixed";
-    popup.style.bottom = "20px";
-    popup.style.left = "20px";
-    popup.style.right = "20px";
-    popup.style.background = "#ffffff"; // Fondo blanco
-    popup.style.color = "#000000"; // Texto negro
-    popup.style.border = "1px solid #3B0E1D"; // Borde vino institucional
-    popup.style.padding = "20px";
-    popup.style.zIndex = "9999";
-    popup.style.boxShadow = "0 0 10px rgba(0,0,0,0.2)";
-    popup.style.borderRadius = "8px";
+  if (!preferenciaGuardada && !yaExiste) {
+    const banner = document.createElement("div");
+    banner.id = "cookie-banner-ref";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Aviso de uso de cookies");
 
-    popup.innerHTML = `
-      <p style="margin: 0 0 10px 0;">
-        Este sitio web utiliza cookies para mejorar tu experiencia y analizar el tráfico.
-        Al continuar navegando, aceptas nuestra Política de Cookies.
-        Puedes leer más sobre cómo usamos tus datos personales en nuestra
-        <a href="#" id="ver-politica" style="color: #6b3088; text-decoration: underline;">política de privacidad</a>
-      </p>
-      <button id="aceptar-cookies" style="background-color: #3B0E1D; color: white; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">
-        Aceptar
-      </button>
+    banner.innerHTML = `
+      <h2>Usamos cookies</h2>
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 280px;">
+          <p>
+            Este sitio web utiliza cookies para mejorar tu experiencia y analizar el tráfico. Al continuar navegando, aceptas nuestra Política de Cookies. Puedes leer más sobre cómo usamos tus datos personales en nuestra
+            <a href="https://www.indesco.la/_files/ugd/33ea43_414a2185224940adb287b1be87c0e195.pdf" target="_blank" rel="noopener noreferrer">política de privacidad</a>.
+          </p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center; flex-shrink: 0; flex-wrap: wrap;">
+          <button id="rechazar-cookies-ref" type="button" class="cookie-btn-outline">
+            Rechazar no esenciales
+          </button>
+          <button id="aceptar-cookies-ref" type="button" class="cookie-btn-accent">
+            Aceptar
+          </button>
+        </div>
+      </div>
     `;
 
-    document.body.appendChild(popup);
+    document.body.appendChild(banner);
 
-    // Evento aceptar
-    document.getElementById("aceptar-cookies").addEventListener("click", function () {
-      localStorage.setItem("cookiesAceptadas", "true");
-      popup.remove(); // Elimina el popup completamente
+    document.getElementById("aceptar-cookies-ref").addEventListener("click", function () {
+      localStorage.setItem("cookiesAceptadas", "todas");
+      banner.remove();
+    });
+
+    document.getElementById("rechazar-cookies-ref").addEventListener("click", function () {
+      localStorage.setItem("cookiesAceptadas", "esenciales");
+      banner.remove();
     });
   }
 });

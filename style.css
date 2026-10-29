@@ -1,21 +1,47 @@
 body {
-    background-image: url(./Imgs/Fondo_GEI2.png);
+    background-image: url(Imgs/Fondo_GEI2.png);
     background-position: center;
     background-size: 100%;
     background-repeat: repeat;
     background-attachment: fixed;
     font-family: 'Century Gothic', Arial, sans-serif;
+    color: #222222;
 }
 
+/* Enlace de salto para teclado y lectores de pantalla */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #701C22;
+    color: #ffffff;
+    padding: 8px 16px;
+    z-index: 100000;
+    transition: top 0.2s ease;
+    border-radius: 4px;
+    text-decoration: underline;
+    font-weight: bold;
+}
 
-/* menú */
+.skip-link:focus {
+    top: 10px;
+    outline: 3px solid #ffcc00;
+}
+
+:focus-visible {
+    outline: 3px solid #ffcc00 !important;
+    outline-offset: 2px !important;
+}
+
+/* menú (vino, logo blanco legacy) */
 nav {
     background-color: #3B0E1D;
 }
 
 .navbar-brand img {
-    margin-left: 100px;
-    width: 80px;
+    margin-left: 40px;
+    height: 70px;
+    width: auto;
 }
 
 .navbar-toggler span {
@@ -28,54 +54,90 @@ nav {
     margin-right: auto;
 }
 
+.nav-divider {
+    color: #ffffff;
+    font-weight: 300;
+    user-select: none;
+    font-size: 1.1rem;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 8px 18px !important;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #ffcc00 !important;
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Botón INGRESO ERP en el menú */
+.btn-erp {
+    background-color: #ffffff;
+    color: #3B0E1D !important;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 8px 20px !important;
+}
+
+.btn-erp:hover,
+.btn-erp:focus {
+    background-color: #F0F0F0;
+    color: #3B0E1D !important;
+}
+
 /* Contenido */
 #fondo {
     margin: 0 auto;
     justify-content: center;
 }
 
-
-/* linea 1 */
-
 .nosotros p {
     text-align: justify;
     padding: 0 50px;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .nosotros img {
-    padding: 0 50PX;
+    padding: 0 50px;
     height: 240px;
 }
 
-
-/* linea 2 */
-
 .mapa {
-    background-image: url(./Imgs/Fondo_mapa.png);
+    background-image: url(Imgs/Fondo_mapa.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* linea 3 */
-
-
 .column-title {
     text-align: center;
     margin-bottom: 10px;
+    color: #3B0E1D;
+    font-weight: 700;
 }
 
+/* Tarjetas de empresas: transición legacy (color de fondo + logo blanco) */
 .column {
     border-radius: 12px;
     height: 300px;
     width: 300px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-
 .column1 {
-    background-image: url(./Imgs/Fondo_Indesco.png);
+    background-image: url(Imgs/Fondo_Indesco.png);
     background-size: cover;
     background-position: center;
     transition: background-color 0.3s;
@@ -83,12 +145,11 @@ nav {
 
 .column1:hover {
     background-color: #7b0010;
-    background-image: url(./Imgs/Fondo_GEI.png);
+    background-image: url(Imgs/Fondo_GEI.png);
 }
 
-
 .column2 {
-    background-image: url(./Imgs/Fondo_enef.png);
+    background-image: url(Imgs/Fondo_enef.png);
     background-size: cover;
     background-position: center;
     transition: background-color 0.3s;
@@ -96,11 +157,11 @@ nav {
 
 .column2:hover {
     background-color: #6b3088;
-    background-image: url(./Imgs/Fondo_GEI.png);
+    background-image: url(Imgs/Fondo_GEI.png);
 }
 
 .column3 {
-    background-image: url(./Imgs/Fondo_Obrasein.png);
+    background-image: url(Imgs/Fondo_Obrasein.png);
     background-size: cover;
     background-position: center;
     transition: background-color 0.3s;
@@ -108,44 +169,117 @@ nav {
 
 .column3:hover {
     background-color: #40735b;
-    background-image: url(./Imgs/Fondo_GEI.png);
+    background-image: url(Imgs/Fondo_GEI.png);
 }
 
+.custom-image {
+    max-height: 120px;
+    width: auto;
+}
 
-/* Formularios3 */
+/* Footer corporativo */
+footer.bg-dark {
+    background-color: #4A1521 !important;
+    border-top: 4px solid #701C22;
+}
 
+footer.bg-dark a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+footer.bg-dark a:hover,
+footer.bg-dark a:focus {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Banner de cookies */
+#cookie-banner-ref {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(139, 38, 47, 0.96);
+    color: #FFFFFF;
+    font-family: 'Century Gothic', sans-serif;
+    padding: 20px 40px;
+    z-index: 99999;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#cookie-banner-ref h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#cookie-banner-ref p {
+    font-size: 14px;
+    margin: 0;
+    color: #FFFFFF;
+    line-height: 1.5;
+}
+
+#cookie-banner-ref a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.cookie-btn-accent {
+    background-color: #701C22;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cookie-btn-outline {
+    background-color: transparent;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF;
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Modales */
 .modal-dialog {
-     margin: 120px auto;
-  }
-  
-  .modal-header {
+    margin: 120px auto;
+}
+
+.modal-header {
     background-color: #3B0E1D;
     color: #fff;
-  }
-  
-  .modal-title {
+}
+
+.modal-title {
     font-size: 18px;
     font-weight: 600;
-  }
-  
-  .modal-body {
+}
+
+.modal-body {
     padding: 20px;
-  }
-  
-  .modal-footer {
-    text-align: right;
-  }
+    color: #222222;
+}
 
-  .btn-close {
-    background-color: white;
-    border: none;
-    color: black;
-  }
-  
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
 
-@media (max-width: 780px) {
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
 
-
+@media (max-width: 992px) {
     .logobrand {
         width: 100%;
         margin-bottom: 8px;
@@ -153,37 +287,31 @@ nav {
 
     .navbar-brand img {
         margin-left: 0;
-
     }
 
-    .colapso {
-        background-color: #470808;
+    .nav-divider {
+        display: none;
     }
 
     .nosotros p {
-        padding: 0
+        padding: 0 15px;
     }
 
     .nosotros img {
         margin-top: 10px;
-        padding: 0 60PX;
+        padding: 0 30px;
         height: 200px;
     }
 
-
     .column {
-        border-radius: 10px;
-        height: 150px;
-        box-shadow: #3B0E1D;
-    }
-
-    .custom-image {
-        height: 100px;
+        height: 180px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .modal-dialog {
         max-width: 320px;
         margin: 120px auto;
-     }
-
+    }
 }

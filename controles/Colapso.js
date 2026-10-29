@@ -1,27 +1,24 @@
-// Highlight the active link
+// Marca el enlace activo y cierra el menú móvil al elegir una opción
 const navItems = document.querySelectorAll('.nav-link');
 navItems.forEach(link => {
   link.addEventListener('click', () => {
-    // Remove the 'active' class from all other menu items
     navItems.forEach(otherLink => {
       if (otherLink !== link) {
         otherLink.classList.remove('active');
       }
     });
-
-    // Add the 'active' class to the clicked menu item
     link.classList.add('active');
   });
 });
 
-// Hide the navbar collapse after clicking a link on small devices
-const links = document.querySelectorAll('.nav-link');
-for (const link of links) {
+// Cierra el menú colapsado después de hacer clic en un enlace en pantallas pequeñas
+for (const link of navItems) {
   link.addEventListener('click', () => {
-    if (window.innerWidth < 768) {
+    // 992px = punto de quiebre de navbar-expand-lg de Bootstrap
+    if (window.innerWidth < 992) {
       const collapseElement = document.getElementById('navbarSupportedContent');
       const collapse = new bootstrap.Collapse(collapseElement, {
-        toggle: false // Set toggle to false to prevent hiding the collapse on subsequent clicks
+        toggle: false
       });
       collapse.hide();
     }
